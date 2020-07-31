@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pitbull | Newsletter</title>
+    <link rel="stylesheet " href="./stylemusic/stylemusic.css" />
+  </head>
+  <body>
+    <header id="newsletter">
+      <nav>
+        <ul>
+          <li><a href="./home.html">HOME</a></li>
+          <li><a href="#newsletter.html">NEWSLETTER</a></li>
+          <li><a href="./music.html">MUSIC</a></li>
+          <li><a href="./tour.html">TOUR</a></li>
+        </ul>
+      </nav>
+      <br />
+      <br />
+      <br />
+      <br />
+    </header>
+    <main>
+      <form
+        action="#"
+        method="post"
+        name="form"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <div class="grid-container">
+          <div class="grid-item grid-item-1">
+            <label for="name">Name </label>
+          </div>
+          <div class="grid-item grid-item-2">
+            <input
+              class="form-input-class"
+              type="text"
+              id="name"
+              placeholder="Type your name..."
+              required
+            />
+          </div>
+          <div class="grid-item grid-item-1">
+            <label for="email">Email </label>
+          </div>
+          <div class="grid-item grid-item-2">
+            <input
+              class="form-input-class"
+              type="email"
+              id="email"
+              placeholder="Type your email..."
+              onkeyup="validateEmail()"
+              required
+            />
+            <p id="emailmessage"></p>
+          </div>
+          <div class="grid-item grid-item-1">
+            <label for="phone">Phone </label>
+          </div>
+          <div class="grid-item grid-item-2">
+            <input
+              class="form-input-class"
+              type="number"
+              id="phone"
+              placeholder="Type your phone..."
+              required
+            />
+          </div>
+          <div class="grid-item grid-item-1">
+            <label for="birthday-time">Birthday</label>
+          </div>
+          <div class="grid-item grid-item-2">
+            <input
+              class="form-input-class"
+              type="datetime-local"
+              id="birthday-time"
+              required
+            />
+          </div>
+          <div class="grid-item grid-item-1">
+            <label for="country">Country</label>
+          </div>
+          <div class="grid-item grid-item-2">
+            <input
+              class="form-input-class"
+              type="text"
+              id="country"
+              placeholder="Type your country..."
+              required
+            />
+          </div>
+          <div class="grid-item grid-item-row grid-item-cell-center">
+            <fieldset>
+              <legend>Marketing permissions</legend>
+              <label for="permissions"
+                ><input
+                  type="checkbox"
+                  id="permissions"
+                  value="email-marketing"
+                />Email</label
+              >
+              <label for="permissions"
+                ><input
+                  type="checkbox"
+                  id="permissions"
+                  value="phone-marketing"
+                />Phone</label
+              >
+            </fieldset>
+          </div>
+          <div class="grid-item grid-item-row grid-item-cell-center">
+            <input
+              id="subscribe"
+              type="button"
+              value="subscribe"
+              onclick="alert('Forms sent!')"
+            />
+          </div>
+        </div>
+      </form>
+      <script>
+        function validateEmail() {
+          var x = document.getElementById("email");
+          if (!x.value.includes("@") || !x.value.includes(".")) {
+            document.getElementById("emailmessage").innerHTML =
+              "The email not contains @ and . characters!";
+            document.getElementById("email").setAttribute("class", "borderred");
+          } else {
+            document.getElementById("emailmessage").innerHTML = "";
+            document.getElementById("email").setAttribute("class", "");
+          }
+        }
+      </script>
+    </main>
+    <footer>
+      <div class="copyright-section">
+        <div>
+          <p>
+            &#169;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            | Pitbull - Made by Junászka Klaudia
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
